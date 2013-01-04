@@ -1,3 +1,6 @@
 [submodule "app/Plugin/BootstrapCake"]
 	path = app/Plugin/BootstrapCake
 	url = git@github.com:visionred/BootstrapCake.git
+[submodule "app/Plugin/AclExtras"]
+	path = app/Plugin/AclExtras
+	url = git@github.com:markstory/acl_extras.git
