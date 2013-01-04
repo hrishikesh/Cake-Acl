@@ -1,14 +1,20 @@
+<?php
+/**
+ * @var $this view
+ */
+?>
 <div class="users form">
-<?php echo $this->Form->create('User'); ?>
+<?php echo $this->Form->create('User', array('class'=>'form-horizontal')); ?>
 	<fieldset>
 		<legend><?php echo __('Add User'); ?></legend>
 	<?php
-		echo $this->Form->input('username');
-		echo $this->Form->input('password');
-		echo $this->Form->input('group_id');
+		echo $this->MyForm->inputHorizontalFrom('username');
+		echo $this->MyForm->inputHorizontalFrom('password');
+		echo $this->MyForm->inputHorizontalFrom('group_id');
+        echo $this->Form->submit(__('Submit'), array('before'=>'<div class="controls">','after'=>'</div>','div'=>'control-group','class'=>'btn btn-primary'))
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->Form->end(); ?>
 </div>
 <!--<div class="actions">
 	<h3><?php /*echo __('Actions'); */?></h3>

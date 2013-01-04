@@ -1,3 +1,8 @@
+<?php
+/**
+ * @var $this view
+ */
+?>
 <div id="acos_link" class="acl_links">
 <?php
 $selected = isset($selected) ? $selected : $this->params['action'];

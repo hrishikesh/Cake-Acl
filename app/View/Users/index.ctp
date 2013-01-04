@@ -1,6 +1,11 @@
+<?php
+/**
+ * @var $this view
+ */
+?>
 <div class="users index">
 	<h2><?php echo __('Users'); ?></h2>
-	<table cellpadding="0" cellspacing="0" class="table table-striped">
+	<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-hover">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('username'); ?></th>
@@ -36,13 +41,16 @@
 	));
 	?>	</p>
 
-	<div class="paging">
+	<div class="pagination">
+    <ul>
 	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
-		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
+		echo '<li>'.$this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled')).'</li>';
+		//echo '<li>'.$this->Paginator->numbers(array('separator' => '|')).'</li>';
+		echo '<li>'.$this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled')).'</li>';
 	?>
+    </ul>
 	</div>
+
 </div>
 <!--<div class="actions">
 	<h3><?php /*echo __('Actions'); */?></h3>

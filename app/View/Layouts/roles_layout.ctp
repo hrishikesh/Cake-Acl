@@ -16,8 +16,9 @@
     	<![endif]-->
 
     	<?php
-    		//Load Bootstrap:  
-    		echo $this->Bootstrap->load(); 
+    		//Load Bootstrap:
+            echo $this->Jquery->load("dev");
+    		echo $this->Bootstrap->load("dev");
 
 
 			echo $this->fetch('meta');

@@ -56,16 +56,27 @@ class AppController extends Controller {
         'Acl',
         'Auth' => array(
             'authorize' => array(
-                'Actions' => array('actionPath' => 'controllers')
+                'Actions' => array('actionPath' => 'Controllers')
             )
         ),
         'Session'
     );
 
     public function beforeFilter() {
+        if($this->_isAdminMode()) {
+            $this->layout = "admin";
+        }
         //Configure AuthComponent
-       /* $this->Auth->loginAction = array('controller' => 'users', 'action' => 'login');
+        $this->Auth->loginAction = array('controller' => 'users', 'action' => 'login');
         $this->Auth->logoutRedirect = array('controller' => 'users', 'action' => 'login');
-        $this->Auth->loginRedirect = array('controller' => 'posts', 'action' => 'add');*/
+        $this->Auth->loginRedirect = array('controller' => 'posts', 'action' => 'add');
+    }
+
+    protected function _isAdminMode() {
+        $adminRoute = Configure::read('Routing.prefixes');
+        if (isset($this->params['prefix']) && in_array($this->params['prefix'], $adminRoute)) {
+            return true;
+        }
+        return false;
     }
 }
