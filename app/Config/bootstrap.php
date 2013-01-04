@@ -181,3 +181,5 @@ CakeLog::config('error', array(
 ));
 CakePlugin::load('BootstrapCake');
 CakePlugin::load('AclExtras');
+
+require_once(APP  . 'Plugin' . DS . 'acl' . DS . 'config' . DS . 'bootstrap.php');
